@@ -42,14 +42,29 @@ class _YoutubeScreenState extends State<YoutubeScreen> {
                                   fit: BoxFit.fill,
                                 ))),
 
-                        SizedBox(
-                          width: 150,
-                          height: 1,
-                          child: Divider(
-                            height: 5,
-                            thickness: 3,
-                            color: Colors.red,
-                          ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            SizedBox(
+                              width: 150,
+                              height: 1,
+                              child: Divider(
+                                height: 5,
+                                thickness: 3,
+                                color: Colors.red,
+                              ),
+                            ),
+                            SizedBox(
+                              width: 260,
+                              height: 1,
+                              child: Divider(
+                                height: 5,
+                                thickness: 3,
+                                color: Colors.grey.shade50,
+                              ),
+                            ),
+                          ],
                         ),
 
                         Row(
@@ -101,51 +116,48 @@ class _YoutubeScreenState extends State<YoutubeScreen> {
                           children: [
                             //-----like and unlike icons
                             Container(
-                              width: Get.width * 0.40,
+                              width: 130,
                               // height: 10,
                               // color: Colors.lightGreenAccent,
-                              child: Center(
-                                child: Wrap(
-                                  spacing: 15,
-                                  runSpacing: 20,
-                                  children: [
-                                    for (int i = 0; i < workytUtils.length; i++)
-                                      Obx(() {
-                                        return Container(
-                                            width: 65,
-                                            height: 80,
-                                            child: Center(
-                                                child: Column(
-                                                  children: [
-                                                    InkWell(
-                                                      onTap: () {
-                                                        _ytController.onClickIsLikeIsUnLike(i);
-                                                        // _ytFindController.isBtnClicked=workytUtils[i].name;
-                                                      },
-                                                      child: Center(
-                                                        child: Image.asset(
-                                                          workytUtils[i].image,
-                                                          height: 30,
-                                                          width: 30,
-                                                          fit: BoxFit.fill,
-                                                          color: _ytFindController.isLike == true && i==0
-                                                              ? Colors.blue
-                                                              : _ytFindController.isUnLike == true && i==1
-                                                              ? Colors.red : Colors.grey,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                    Text('${workytUtils[i].name}'),
-                                                  ],
-                                                )));
-                                      }),
-                                  ],
-                                ),
+                              child: Wrap(
+                                spacing: 15,
+                                runSpacing: 20,
+                                children: [
+                                  for (int i = 0; i < workytUtils.length; i++)
+                                    Obx(() {
+                                      return Container(
+                                          width: 50,
+                                          height: 70,
+                                          child: Column(
+                                            children: [
+                                              InkWell(
+                                                onTap: () {
+                                                  _ytController.onClickIsLikeIsUnLike(i);
+                                                  // _ytFindController.isBtnClicked=workytUtils[i].name;
+                                                },
+                                                child: Center(
+                                                  child: Image.asset(
+                                                    workytUtils[i].image,
+                                                    height: 30,
+                                                    width: 30,
+                                                    fit: BoxFit.fill,
+                                                    color: _ytFindController.isLike == true && i==0
+                                                        ? Colors.blue
+                                                        : _ytFindController.isUnLike == true && i==1
+                                                        ? Colors.red : Colors.grey,
+                                                  ),
+                                                ),
+                                              ),
+                                              Text('${workytUtils[i].name}',style: TextStyle(fontSize: 12),),
+                                            ],
+                                          ));
+                                    }),
+                                ],
                               ),
                             ),
                             //other icons
                             Container(
-                              width: Get.width * 0.60,
+                              width: 250,
                               // height: 10,
                               // color: Colors.lightGreenAccent,
                               child: Center(
@@ -158,8 +170,8 @@ class _YoutubeScreenState extends State<YoutubeScreen> {
                                     // Obx(() {
                                     //   return
                                       Container(
-                                          width: 65,
-                                          height: 80,
+                                          width: 60,
+                                          height: 70,
                                           child: Center(
                                               child: Column(
                                                 children: [
@@ -177,7 +189,7 @@ class _YoutubeScreenState extends State<YoutubeScreen> {
                                                       ),
                                                     ),
                                                   ),
-                                                  Text('${workytUtils2[j].name}'),
+                                                  Text('${workytUtils2[j].name}',style: TextStyle(fontSize: 12)),
                                                 ],
                                               )))
                                     // }),
@@ -197,7 +209,7 @@ class _YoutubeScreenState extends State<YoutubeScreen> {
                               children: [
                                 Container(
                                   height: 40,
-                                  width: Get.width * 0.10,
+                                  width: 30,
                                   decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(12),
                                       color: Colors.white),
@@ -211,7 +223,7 @@ class _YoutubeScreenState extends State<YoutubeScreen> {
                                 ),
                                 Container(
                                   height: 60,
-                                  width: Get.width * 0.50,
+                                  width: 200,
                                   margin: EdgeInsets.only(left: 10, top: 6),
                                   child: Column(
                                     children: [
@@ -232,7 +244,7 @@ class _YoutubeScreenState extends State<YoutubeScreen> {
                                   },
                                   child: Container(
                                     height: 30,
-                                    width: Get.width * 0.29,
+                                    width: 80,
                                     margin: EdgeInsets.only(left: 20),
                                     decoration: BoxDecoration(
                                         color: Colors.black,
