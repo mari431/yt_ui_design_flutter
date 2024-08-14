@@ -9,9 +9,14 @@ List<YtModel> workytUtils = [
     name: '1M',
     ),
   YtModel(
-    image: 'images/unlike_hand.png',
+    image: 'images/unlike_hand_dark.png',
     name: '1K',
-  ),
+  )
+];
+
+
+List<YtModel> workytUtils2 = [
+
   YtModel(
     image: 'images/share.png',
     name: 'Share',
@@ -24,5 +29,4 @@ List<YtModel> workytUtils = [
     image: 'images/bookmark.png',
     name: 'Save',
   )
-
 ];
