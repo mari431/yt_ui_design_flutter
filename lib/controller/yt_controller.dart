@@ -18,6 +18,14 @@ class YtController extends GetxController{
     _isUnLike.value = value;
   }
 
+  var _isSubscribe = false.obs;
+
+  get isSubscribe => _isSubscribe.value;
+
+  set isSubscribe(value) {
+    _isSubscribe.value = value;
+  }
+
   @override
   void onInit() {
     // TODO: implement onInit
@@ -42,9 +50,8 @@ class YtController extends GetxController{
     // isUnLike=isUnLike;
   }
 
-  Future<void> onClickOtherButtons(String name,index)async{
-    print(index);
-    // isBtnClicked = name;
+  Future<void> onSubscribeBtn()async{
+    isSubscribe=!isSubscribe;
   }
 
 
